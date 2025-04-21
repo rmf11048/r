@@ -1,5 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Link</title>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (id) {
+        const link = document.getElementById('dynamic-link');
+        link.href = `link://pepeauto.com/link?id=${encodeURIComponent(id)}`;
+        link.textContent = `Go to item ${id}`;
+      } else {
+        document.getElementById('link-container').textContent = 'No ID provided in the query string.';
+      }
+    };
+  </script>
+</head>
 <body>
-<a href="link://pepeauto.com/link?id=23">click</a>
+  <div id="link-container">
+    <a id="dynamic-link" href="#"></a>
+  </div>
 </body>
 </html>
