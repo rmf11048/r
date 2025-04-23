@@ -2,24 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dynamic Link</title>
+  <title></title>
   <script>
     window.onload = function () {
       const params = new URLSearchParams(window.location.search);
       const id = params.get('id');
-
-      if (id) {
-        const targetUrl = 'link://pepeauto.com/link/${encodeURIComponent(id)}';
-        window.location.href = targetUrl;
-      } else {
-        document.getElementById('link-container').textContent = 'No ID provided in the query string.';
-      }
+      window.location.href = 'link://pepeauto.com/link/' + encodeURIComponent(id);
     };
   </script>
 </head>
 <body>
-  <div id="link-container">
-    <!-- Navigation happens automatically -->
-  </div>
 </body>
 </html>
