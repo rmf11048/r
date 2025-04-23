@@ -9,9 +9,8 @@
       const id = params.get('id');
 
       if (id) {
-        const link = document.getElementById('dynamic-link');
-        link.href = `link://pepeauto.com/link/${encodeURIComponent(id)}`;
-        link.textContent = `Go to item ${id}`;
+        const targetUrl = 'link://pepeauto.com/link/${encodeURIComponent(id)}';
+        window.location.href = targetUrl;
       } else {
         document.getElementById('link-container').textContent = 'No ID provided in the query string.';
       }
@@ -20,7 +19,7 @@
 </head>
 <body>
   <div id="link-container">
-    <a id="dynamic-link" href="#"></a>
+    <!-- Navigation happens automatically -->
   </div>
 </body>
 </html>
