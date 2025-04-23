@@ -10,7 +10,7 @@
 
       if (id) {
         const link = document.getElementById('dynamic-link');
-        link.href = `link://pepeauto.com/link?id=${encodeURIComponent(id)}`;
+        link.href = `link://pepeauto.com/Link?id=${encodeURIComponent(id)}`;
         link.textContent = `Go to item ${id}`;
       } else {
         document.getElementById('link-container').textContent = 'No ID provided in the query string.';
